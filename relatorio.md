@@ -15,10 +15,15 @@ Este relatório documenta o processo realizado para a execução do teste técni
 | *Máximo*        | 59    | 100000       | 29.8          | 1               |
 
 **Idade:** Numérica, com 10 valores ausentes.
+
 **Renda Anual (em $):** Numérica, com 11 valores ausentes.
+
 **Gênero:** Categórica, com 7 valores ausentes.
+
 **Tempo no Site (min):** Numérica, sem valores ausentes, porém com valores inválidos  como -1 .
+
 **Anúncio Clicado:** Categórica (provavelmente "Sim" ou "Não"), com 10 valores ausentes.
+
 **Compra (0 ou 1):** Variável alvo (binária).
 
 ### Etapa 1 - Análise exploratória dos dados:
