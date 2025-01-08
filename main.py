@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import KFold, cross_val_score, train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
@@ -50,6 +50,16 @@ model.fit(X_train, y_train)
 # 5. Teste do modelo 
 y_pred = model.predict(X_test)
 print(classification_report(y_test, y_pred))
+
+# Configuração da Validação Cruzada
+kf = KFold(n_splits=5, shuffle=True, random_state=42)
+scores = cross_val_score(model, X, y, cv=kf, scoring='accuracy')
+
+# 4. Resultados
+print(f"Acurácias por fold: {scores}")
+print(f"Acurácia média: {scores.mean():.4f}")
+print(f"Desvio padrão das acurácias: {scores.std():.4f}")
+
 sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt='d')
 plt.show()
 

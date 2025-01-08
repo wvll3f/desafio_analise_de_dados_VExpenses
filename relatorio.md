@@ -6,7 +6,7 @@ Este relatório documenta o processo realizado para a execução do teste técni
 
 **Ferramentas utilizadas:** python 3 com as bibliotecas, Pandas, matplotlib, seaborn, scikit-learn.
 
-### Estatísticas descritivas:
+### Etapa 1 - Análise exploratória dos dados:
 |  Métricas         | Idade | Renda Anual  | Tempo no Site | Compra (0 ou 1) |
 |-------------------|-------|--------------|---------------|-----------------|
 | *Média*         | 38,5  | 58253.9      | 17.3          | 0.33            |
@@ -25,8 +25,6 @@ Este relatório documenta o processo realizado para a execução do teste técni
 **Anúncio Clicado:** Categórica (provavelmente "Sim" ou "Não"), com 10 valores ausentes.
 
 **Compra (0 ou 1):** Variável alvo (binária).
-
-### Etapa 1 - Análise exploratória dos dados:
 
 Foi identificado nas colunas de *Idade, Renda Anual, Gênero, Anúncio Clicado,* a falta de valores em algumas linhas.
 
@@ -50,6 +48,10 @@ Na coluna de *Tempo no site,* foi identificado a presença valores inválidos  (
 
 ### Etapa 3 - Construção do modelo de classificação:
 Optei por utilizar o modelo de classificação baseado em árvores de decisão, por ser um modelo que pode lidar bem com ambos os tipos de variáveis e pela forma como lida com essas árvores de decisão, podendo gerar uma modelo com maior confiabilidade.
+
+Utilizado também o cross validation onde tivemos resultados bem proximos utilizando 5 versões de testes, e com um desvio padrão de 5% e uma media de 63% de acurácia.
+
+E com isso os resultados usando o modelo de arvore de decisão se demonstraram bem proximos ao resultado após usar o cross validation.
 
 ### Etapa 4 - Interpretação dos resultados:
 
